@@ -50,5 +50,11 @@ async function login(req, res) {
     }
 }
 
+async function logout(req, res) {
+    req.session.destroy()
+    res.sendStatus(200)
+}
+
 module.exports.register = register
 module.exports.login = login
+module.exports.logout = logout
